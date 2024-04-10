@@ -19,7 +19,6 @@ namespace ProyectoWebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("Lista")]
         public async Task<IActionResult> Lista()
         {
             List<Empleado> list = await _empleadoData.Lista();
