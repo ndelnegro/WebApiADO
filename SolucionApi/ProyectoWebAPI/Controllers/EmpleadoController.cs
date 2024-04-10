@@ -19,10 +19,11 @@ namespace ProyectoWebAPI.Controllers
         }
 
         [HttpGet]
+        [Route("Lista")]
         public async Task<IActionResult> Lista()
         {
             List<Empleado> list = await _empleadoData.Lista();
-            return StatusCode(StatusCodes.Status200OK, list);
+            return StatusCode(StatusCodes.Status200OK, new {mensaje="ok",response= list });
         }
         
         [HttpPost]
